@@ -15,8 +15,5 @@ private:
   bool _valid;
   FFGLFBO3D _fbo;
   GLuint _offset;
-  FFGLShader _shader;
-  GLint _textureBufferLocation;
-  GLint _textureNewFrameLocation;
-  GLint _offsetLocation;
+  GLfloat *_cacheData;
 };
