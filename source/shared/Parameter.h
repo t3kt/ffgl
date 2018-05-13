@@ -9,6 +9,7 @@
 #include <functional>
 #include "Common.h"
 #include <FFGLPluginSDK.h>
+#include <iostream>
 
 class ParameterBase {
 public:
@@ -36,6 +37,9 @@ private:
   float _normalizedValue;
 };
 
+std::ostream& operator<<(std::ostream& os,
+                         const FloatParameter& param);
+
 class BoolParameter : public ParameterBase {
 public:
   BoolParameter(bool value,
@@ -56,6 +60,9 @@ private:
   const char* _onText;
   const char* _offText;
 };
+
+std::ostream& operator<<(std::ostream& os,
+                         const BoolParameter& param);
 
 class ActionParameter : public ParameterBase {
 public:

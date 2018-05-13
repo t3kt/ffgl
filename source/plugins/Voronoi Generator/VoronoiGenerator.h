@@ -10,11 +10,13 @@
 #include <FFGLPluginSDK.h>
 #include <FFGLShader.h>
 #include <string>
+#include "Plugin.h"
+#include <memory>
 
 extern std::string voronoiGenVertexShader;
 extern std::string voronoiGenFragmentShader;
 
-class VoronoiGenerator : public CFreeFrameGLPlugin {
+class VoronoiGenerator : public PluginBase {
 public:
   VoronoiGenerator();
   virtual ~VoronoiGenerator() {}
@@ -23,8 +25,6 @@ public:
   // FreeFrame plugin methods
   ///////////////////////////////////////////////////
 
-  FFResult SetFloatParameter(unsigned int dwIndex, float value) override;
-  float GetFloatParameter(unsigned int index) override;
   FFResult ProcessOpenGL(ProcessOpenGLStruct* pGL) override;
   FFResult InitGL(const FFGLViewportStruct *vp) override;
   FFResult DeInitGL() override;
@@ -50,20 +50,21 @@ private:
   void updateTime();
   void debugDump() const;
 
-  float m_scaleX;
-  float m_scaleY;
-  float m_uniformScale;
-  float m_translateX;
-  float m_translateY;
-  float m_rotate;
-  bool m_fillEnabled;
-  bool m_borderEnabled;
-  float m_borderOffsetX;
-  float m_borderOffsetY;
-  float m_borderColorR;
-  float m_borderColorG;
-  float m_borderColorB;
-  float m_speed;
+  FloatParameter _scaleX;
+  FloatParameter _scaleY;
+  FloatParameter _uniformScale;
+  FloatParameter _translateX;
+  FloatParameter _translateY;
+  FloatParameter _rotate;
+  BoolParameter _fillEnabled;
+  BoolParameter _borderEnabled;
+  FloatParameter _borderOffsetX;
+  FloatParameter _borderOffsetY;
+  FloatParameter _borderColorR;
+  FloatParameter _borderColorG;
+  FloatParameter _borderColorB;
+  FloatParameter _speed;
+  std::shared_ptr<ActionParameter> _debugDump;
   double m_lastTicks;
   double m_time;
 

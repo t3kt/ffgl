@@ -7,6 +7,16 @@
 #include <cstdio>
 #include <cstring>
 
+std::ostream& operator<<(std::ostream& os,
+                         const BoolParameter& param) {
+  return os << param.GetValue();
+}
+
+std::ostream& operator<<(std::ostream& os,
+                         const FloatParameter& param) {
+  return os << param.GetValue();
+}
+
 FloatParameter::FloatParameter(float value,
                                float rangeLow, float rangeHigh)
 : _rangeLow(rangeLow)

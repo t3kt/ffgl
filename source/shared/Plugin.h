@@ -12,6 +12,8 @@
 
 class PluginBase : public CFreeFrameGLPlugin {
 public:
+  PluginBase() : CFreeFrameGLPlugin() {}
+  virtual ~PluginBase() {}
 
   FFResult SetFloatParameter(unsigned int dwIndex, float value) override;
   float GetFloatParameter(unsigned int index) override;

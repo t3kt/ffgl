@@ -44,48 +44,44 @@ static CFFGLPluginInfo PluginInfo
 );
 
 VoronoiGenerator::VoronoiGenerator()
-: CFreeFrameGLPlugin() {
+: PluginBase()
+, _scaleX(1, 0, 4)
+, _scaleY(1, 0, 4)
+, _uniformScale(1, 0, 5)
+, _translateX(0, -10, 10)
+, _translateY(0, -10, 10)
+, _rotate(0, -180, 180)
+, _fillEnabled(true, "enabled", "disabled")
+, _borderEnabled(true, "enabled", "disabled")
+, _borderOffsetX(0.01, 0, 0.1f)
+, _borderOffsetY(0.03, 0, 0.1f)
+, _borderColorR(0, 0, 1)
+, _borderColorG(0, 0, 1)
+, _borderColorB(0, 0, 1)
+, _speed(5, 0, 50) {
+
+  _debugDump = std::make_unique<ActionParameter>([&]() {
+    debugDump();
+  });
+
   SetMinInputs(0);
   SetMaxInputs(0);
 
-  SetParamInfo(VGPARAM_SCALE_X, "Scale X", FF_TYPE_XPOS, 1.0f);
-  SetParamInfo(VGPARAM_SCALE_Y, "Scale Y", FF_TYPE_YPOS, 1.0f);
-  m_scaleX = 1.0f;
-  m_scaleY = 1.0f;
-
-  SetParamInfo(VGPARAM_UNIFORM_SCALE, "Uniform Scale", FF_TYPE_BRIGHTNESS, 1.0f);
-  m_uniformScale = 1.0f;
-
-  SetParamInfo(VGPARAM_TRANSLATE_X, "Translate X", FF_TYPE_XPOS, 0.0f);
-  SetParamInfo(VGPARAM_TRANSLATE_Y, "Translate Y", FF_TYPE_YPOS, 0.0f);
-  m_translateX = 0.0f;
-  m_translateY = 0.0f;
-
-  SetParamInfo(VGPARAM_ROTATE, "Rotate", FF_TYPE_STANDARD, 0.0f);
-  m_rotate = 0.0f;
-
-  SetParamInfo(VGPARAM_SPEED, "Speed", FF_TYPE_STANDARD, 0.5f);
-  m_speed = 1.0f;
-
-  SetParamInfo(VGPARAM_FILL_ENABLED, "Fill Enabled", FF_TYPE_BOOLEAN, true);
-  m_fillEnabled = true;
-
-  SetParamInfo(VGPARAM_BORDER_ENABLED, "Border Enabled", FF_TYPE_BOOLEAN, false);
-  m_borderEnabled = false;
-
-  SetParamInfo(VGPARAM_BORDER_OFFSET_X, "Border Offset X", FF_TYPE_XPOS, 0.01f);
-  SetParamInfo(VGPARAM_BORDER_OFFSET_Y, "Border Offset Y", FF_TYPE_YPOS, 0.03f);
-  m_translateX = 0.01f;
-  m_translateY = 0.03f;
-
-  SetParamInfo(VGPARAM_BORDER_COLOR_R, "Border R", FF_TYPE_RED, 0.0f);
-  SetParamInfo(VGPARAM_BORDER_COLOR_G, "Border G", FF_TYPE_GREEN, 0.0f);
-  SetParamInfo(VGPARAM_BORDER_COLOR_B, "Border B", FF_TYPE_BLUE, 0.0f);
-  m_borderColorR = 0.0f;
-  m_borderColorG = 0.0f;
-  m_borderColorB = 0.0f;
-
-  SetParamInfo(VGPARAM_DUMP, "Debug Dump", FF_TYPE_EVENT, false);
+  RegisterParam(_scaleX, FF_TYPE_XPOS, "Scale X");
+  RegisterParam(_scaleY, FF_TYPE_YPOS, "Scale Y");
+  RegisterParam(_uniformScale, FF_TYPE_STANDARD, "Uniform Scale");
+  RegisterParam(_translateX, FF_TYPE_XPOS, "Translate X");
+  RegisterParam(_translateY, FF_TYPE_YPOS, "Translate Y");
+  RegisterParam(_rotate, FF_TYPE_STANDARD, "Rotate");
+  RegisterParam(_fillEnabled, "Fill Enabled");
+  RegisterParam(_borderEnabled, "Border Enabled");
+  RegisterParam(_borderOffsetX, FF_TYPE_XPOS, "Border Offset X");
+  RegisterParam(_borderOffsetY, FF_TYPE_YPOS, "Border Offset Y");
+  RegisterParam(_borderColorR, FF_TYPE_RED, "Border Red");
+  RegisterParam(_borderColorG, FF_TYPE_GREEN, "Border Green");
+  RegisterParam(_borderColorB, FF_TYPE_BLUE, "Border Blue");
+  RegisterParam(_speed, FF_TYPE_STANDARD, "Speed");
+  RegisterParam(*_debugDump, "Debug Dump");
 }
 
 FFResult VoronoiGenerator::InitGL(const FFGLViewportStruct *vp) {
@@ -105,7 +101,7 @@ FFResult VoronoiGenerator::InitGL(const FFGLViewportStruct *vp) {
 
   m_scaleLocation = m_shader.FindUniform("scale");
   m_translateLocation = m_shader.FindUniform("translate");
-  m_rotateLocation = m_shader.FindUniform("rotate");
+  m_rotateLocation = m_shader.FindUniform("rotation");
   m_enableLocation = m_shader.FindUniform("enabled");
   m_borderColorLocation = m_shader.FindUniform("borderColor");
   m_resolutionLocation = m_shader.FindUniform("resolution");
@@ -133,7 +129,7 @@ void VoronoiGenerator::updateTime() {
   double ticks = getTicks() / 10000.0;
   double delta = ticks - m_lastTicks;
   m_lastTicks = ticks;
-  m_time += delta * m_speed;
+  m_time += delta * _speed.GetValue();
 }
 
 FFResult VoronoiGenerator::ProcessOpenGL(ProcessOpenGLStruct *pGL) {
@@ -147,20 +143,20 @@ FFResult VoronoiGenerator::ProcessOpenGL(ProcessOpenGLStruct *pGL) {
   m_shader.BindShader();
 
   glUniform2f(m_scaleLocation,
-              m_scaleX * m_uniformScale,
-              m_scaleY * m_uniformScale);
+              _scaleX.GetValue() * _uniformScale.GetValue(),
+              _scaleY.GetValue() * _uniformScale.GetValue());
   glUniform2f(m_translateLocation,
-              m_translateX,
-              m_translateY);
+              _translateX.GetValue(),
+              _translateY.GetValue());
   glUniform1f(m_rotateLocation,
-              m_rotate);
+              _rotate.GetValue());
   glUniform2f(m_enableLocation,
-              m_borderEnabled ? 1.0f : 0.0f,
-              m_fillEnabled ? 1.0f : 0.0f);
+              _borderEnabled.GetValue() ? 1.0f : 0.0f,
+              _fillEnabled.GetValue() ? 1.0f : 0.0f);
   glUniform3f(m_borderColorLocation,
-              m_borderColorR,
-              m_borderColorG,
-              m_borderColorB);
+              _borderColorR.GetValue(),
+              _borderColorG.GetValue(),
+              _borderColorB.GetValue());
   glUniform2f(m_resolutionLocation,
               static_cast<float>(m_resolutionX),
               static_cast<float>(m_resolutionY));
@@ -188,110 +184,19 @@ FFResult VoronoiGenerator::ProcessOpenGL(ProcessOpenGLStruct *pGL) {
   return FF_SUCCESS;
 }
 
-float VoronoiGenerator::GetFloatParameter(unsigned int index) {
-  switch (index) {
-    case VGPARAM_SCALE_X:
-      return m_scaleX;
-    case VGPARAM_SCALE_Y:
-      return m_scaleY;
-    case VGPARAM_UNIFORM_SCALE:
-      return m_uniformScale;
-    case VGPARAM_TRANSLATE_X:
-      return m_translateX;
-    case VGPARAM_TRANSLATE_Y:
-      return m_translateY;
-    case VGPARAM_ROTATE:
-      return m_rotate;
-    case VGPARAM_SPEED:
-      return m_speed / 2.0f;
-    case VGPARAM_FILL_ENABLED:
-      return m_fillEnabled ? 1.0f : 0.0f;
-    case VGPARAM_BORDER_ENABLED:
-      return m_borderEnabled ? 1.0f : 0.0f;
-    case VGPARAM_BORDER_OFFSET_X:
-      return m_borderOffsetX;
-    case VGPARAM_BORDER_OFFSET_Y:
-      return m_borderOffsetY;
-    case VGPARAM_BORDER_COLOR_R:
-      return m_borderColorR;
-    case VGPARAM_BORDER_COLOR_G:
-      return m_borderColorG;
-    case VGPARAM_BORDER_COLOR_B:
-      return m_borderColorB;
-    default:
-      return 0.0f;
-  }
-}
-
-FFResult VoronoiGenerator::SetFloatParameter(unsigned int dwIndex,
-                                             float value) {
-  switch (dwIndex) {
-    case VGPARAM_SCALE_X:
-      m_scaleX = value;
-      break;
-    case VGPARAM_SCALE_Y:
-      m_scaleY = value;
-      break;
-    case VGPARAM_UNIFORM_SCALE:
-      m_uniformScale = value;
-      break;
-    case VGPARAM_TRANSLATE_X:
-      m_translateX = value;
-      break;
-    case VGPARAM_TRANSLATE_Y:
-      m_translateY = value;
-      break;
-    case VGPARAM_ROTATE:
-      m_rotate = value;
-      break;
-    case VGPARAM_SPEED:
-      m_speed = value / 0.5f;
-      break;
-    case VGPARAM_FILL_ENABLED:
-      m_fillEnabled = value >= 0.5f;
-      break;
-    case VGPARAM_BORDER_ENABLED:
-      m_borderEnabled = value >= 0.5f;
-      break;
-    case VGPARAM_BORDER_OFFSET_X:
-      m_borderOffsetX = value;
-      break;
-    case VGPARAM_BORDER_OFFSET_Y:
-      m_borderOffsetY = value;
-      break;
-    case VGPARAM_BORDER_COLOR_R:
-      m_borderColorR = value;
-      break;
-    case VGPARAM_BORDER_COLOR_G:
-      m_borderColorG = value;
-      break;
-    case VGPARAM_BORDER_COLOR_B:
-      m_borderColorB = value;
-      break;
-    case VGPARAM_DUMP:
-      if (value >= 0.5) {
-        debugDump();
-      }
-      break;
-    default:
-      return FF_FAIL;
-  }
-  return FF_SUCCESS;
-}
-
 void VoronoiGenerator::debugDump() const {
   std::cout << "\n"
   << "VoronoiGenerator DUMP\n"
   << std::setprecision(4)
   << std::boolalpha
-  << "scale: " << m_scaleX << ", " << m_scaleY << "\n"
-  << "uniform scale: " << m_uniformScale << "\n"
-  << "translate: " << m_translateX << ", " << m_translateY << "\n"
-  << "rotate: " << m_rotate << "\n"
-  << "speed: " << m_speed << "\n"
-  << "fill: " << m_fillEnabled << " border: " << m_borderEnabled << "\n"
-  << "border offset: " << m_borderOffsetX << ", " << m_borderOffsetY << "\n"
-  << "border color: " << m_borderColorR << ", " << m_borderColorG << ", " << m_borderColorB << "\n"
+  << "scale: " << _scaleX << ", " << _scaleY << "\n"
+  << "uniform scale: " << _uniformScale << "\n"
+  << "translate: " << _translateX << ", " << _translateY << "\n"
+  << "rotate: " << _rotate << "\n"
+  << "speed: " << _speed << "\n"
+  << "fill: " << _fillEnabled << " border: " << _borderEnabled << "\n"
+  << "border offset: " << _borderOffsetX << ", " << _borderOffsetY << "\n"
+  << "border color: " << _borderColorR << ", " << _borderColorG << ", " << _borderColorB << "\n"
   << "time: " << m_time << "\n"
   << "res: " << m_resolutionX << " x " << m_resolutionY << "\n"
   << std::endl;
