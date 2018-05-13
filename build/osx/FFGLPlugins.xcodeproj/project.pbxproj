@@ -33,6 +33,9 @@
 		32D7F71C20A6AF1B0078A26E /* FFGLPluginSDK.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6DB1A371B9054A9007E6883 /* FFGLPluginSDK.cpp */; };
 		32D7F71D20A6AF1B0078A26E /* FFGLShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6DB1A391B9054A9007E6883 /* FFGLShader.cpp */; };
 		32D7F71E20A6AF1B0078A26E /* utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6DB1A3D1B9054A9007E6883 /* utilities.cpp */; };
+		32D7F72A20A7D9790078A26E /* Parameter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32D7F72820A7D9790078A26E /* Parameter.cpp */; };
+		32D7F72D20A7D9C30078A26E /* Common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32D7F72B20A7D9C30078A26E /* Common.cpp */; };
+		32D7F73020A7E54B0078A26E /* Plugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32D7F72E20A7E54B0078A26E /* Plugin.cpp */; };
 		32E3B3B4205CA7D60040AEF4 /* utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6DB1A3D1B9054A9007E6883 /* utilities.cpp */; };
 		32E3B3BC205CA8940040AEF4 /* FFGL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6DB1A2A1B9054A9007E6883 /* FFGL.cpp */; };
 		32E3B3BD205CA8940040AEF4 /* Add.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB4B63E11FF8453A0069DA80 /* Add.cpp */; };
@@ -114,6 +117,12 @@
 		32D7F71020A6A1A10078A26E /* VoronoiGenerator.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoronoiGenerator.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D7F71120A6A1A10078A26E /* Gradients copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Gradients copy-Info.plist"; path = "/Users/tekt/creations/ffgl/build/osx/Gradients copy-Info.plist"; sourceTree = "<absolute>"; };
 		32D7F71220A6A3140078A26E /* VoronoiGenerator_Shader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = VoronoiGenerator_Shader.cpp; sourceTree = "<group>"; };
+		32D7F72820A7D9790078A26E /* Parameter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Parameter.cpp; sourceTree = "<group>"; };
+		32D7F72920A7D9790078A26E /* Parameter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Parameter.h; sourceTree = "<group>"; };
+		32D7F72B20A7D9C30078A26E /* Common.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Common.cpp; sourceTree = "<group>"; };
+		32D7F72C20A7D9C30078A26E /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		32D7F72E20A7E54B0078A26E /* Plugin.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Plugin.cpp; sourceTree = "<group>"; };
+		32D7F72F20A7E54B0078A26E /* Plugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Plugin.h; sourceTree = "<group>"; };
 		32E3B3B6205CA8610040AEF4 /* TimeMachine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeMachine.h; sourceTree = "<group>"; };
 		32E3B3B7205CA8710040AEF4 /* TimeMachine.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TimeMachine.cpp; sourceTree = "<group>"; };
 		32E3B3C8205CA8940040AEF4 /* TimeMachine.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeMachine.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -218,6 +227,7 @@
 				D69416991B90420600D30319 /* xcconfig */,
 				D69416971B9041FA00D30319 /* FFGLPlugin-Info.plist */,
 				D69416961B9040DA00D30319 /* PluginIds.txt */,
+				32D7F72620A7D95C0078A26E /* shared */,
 				E8D767450C9195D90089BAEB /* source plugins */,
 				E8D165D30C5E174D0035D796 /* effect plugins */,
 				E8D165D40C5E177A0035D796 /* mixer plugins */,
@@ -259,6 +269,20 @@
 			);
 			name = "Voronoi Generator";
 			path = "../../source/plugins/Voronoi Generator";
+			sourceTree = "<group>";
+		};
+		32D7F72620A7D95C0078A26E /* shared */ = {
+			isa = PBXGroup;
+			children = (
+				32D7F72820A7D9790078A26E /* Parameter.cpp */,
+				32D7F72920A7D9790078A26E /* Parameter.h */,
+				32D7F72B20A7D9C30078A26E /* Common.cpp */,
+				32D7F72C20A7D9C30078A26E /* Common.h */,
+				32D7F72E20A7E54B0078A26E /* Plugin.cpp */,
+				32D7F72F20A7E54B0078A26E /* Plugin.h */,
+			);
+			name = shared;
+			path = ../../source/shared;
 			sourceTree = "<group>";
 		};
 		32E3B3B5205CA8210040AEF4 /* TimeMachine */ = {
@@ -641,8 +665,11 @@
 				32D7F71A20A6AF1B0078A26E /* FFGLPluginInfoData.cpp in Sources */,
 				32D7F71420A6A35A0078A26E /* VoronoiGenerator_Shader.cpp in Sources */,
 				32D7F71B20A6AF1B0078A26E /* FFGLPluginManager.cpp in Sources */,
+				32D7F72D20A7D9C30078A26E /* Common.cpp in Sources */,
 				32D7F71720A6AF1B0078A26E /* FFGLFBO.cpp in Sources */,
+				32D7F73020A7E54B0078A26E /* Plugin.cpp in Sources */,
 				32D7F71D20A6AF1B0078A26E /* FFGLShader.cpp in Sources */,
+				32D7F72A20A7D9790078A26E /* Parameter.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -796,6 +823,8 @@
 		32D7F70E20A6A1A10078A26E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -812,7 +841,7 @@
 					LOGSHADERERRORS,
 				);
 				INFOPLIST_FILE = "Gradients copy-Info.plist";
-				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				INSTALL_PATH = "$(HOME)/creations/resolume/plugins";
 				PREBINDING = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = bundle;
@@ -823,6 +852,8 @@
 		32D7F70F20A6A1A10078A26E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
@@ -837,7 +868,7 @@
 					LOGSHADERERRORS,
 				);
 				INFOPLIST_FILE = "Gradients copy-Info.plist";
-				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				INSTALL_PATH = "$(HOME)/creations/resolume/plugins";
 				PREBINDING = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = bundle;

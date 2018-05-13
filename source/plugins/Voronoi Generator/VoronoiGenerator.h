@@ -1,5 +1,5 @@
 //
-//  VoronoiGenerator.hpp
+//  VoronoiGenerator.h
 //  Gradients
 //
 //  Created by tekt on 5/11/18.
@@ -29,7 +29,6 @@ public:
   FFResult InitGL(const FFGLViewportStruct *vp) override;
   FFResult DeInitGL() override;
 
-  FFResult SetTime(double time) override;
   unsigned int Resize(const FFGLViewportStruct *vp) override;
 
   //The mixer short name
@@ -48,6 +47,9 @@ public:
   }
 
 private:
+  void updateTime();
+  void debugDump() const;
+
   float m_scaleX;
   float m_scaleY;
   float m_uniformScale;
@@ -61,6 +63,8 @@ private:
   float m_borderColorR;
   float m_borderColorG;
   float m_borderColorB;
+  float m_speed;
+  double m_lastTicks;
   double m_time;
 
   GLuint m_resolutionX;
