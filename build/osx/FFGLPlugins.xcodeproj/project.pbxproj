@@ -23,7 +23,31 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		32D7F70420A6A1A10078A26E /* VoronoiGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32D7F6FE20A6A03E0078A26E /* VoronoiGenerator.cpp */; };
+		32D7F71420A6A35A0078A26E /* VoronoiGenerator_Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32D7F71220A6A3140078A26E /* VoronoiGenerator_Shader.cpp */; };
+		32D7F71720A6AF1B0078A26E /* FFGLFBO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6DB1A691B906185007E6883 /* FFGLFBO.cpp */; };
+		32D7F71820A6AF1B0078A26E /* FFGL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6DB1A2A1B9054A9007E6883 /* FFGL.cpp */; };
+		32D7F71920A6AF1B0078A26E /* FFGLPluginInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6DB1A311B9054A9007E6883 /* FFGLPluginInfo.cpp */; };
+		32D7F71A20A6AF1B0078A26E /* FFGLPluginInfoData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6DB1A331B9054A9007E6883 /* FFGLPluginInfoData.cpp */; };
+		32D7F71B20A6AF1B0078A26E /* FFGLPluginManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6DB1A341B9054A9007E6883 /* FFGLPluginManager.cpp */; };
+		32D7F71C20A6AF1B0078A26E /* FFGLPluginSDK.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6DB1A371B9054A9007E6883 /* FFGLPluginSDK.cpp */; };
+		32D7F71D20A6AF1B0078A26E /* FFGLShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6DB1A391B9054A9007E6883 /* FFGLShader.cpp */; };
+		32D7F71E20A6AF1B0078A26E /* utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6DB1A3D1B9054A9007E6883 /* utilities.cpp */; };
+		32D7F72A20A7D9790078A26E /* Parameter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32D7F72820A7D9790078A26E /* Parameter.cpp */; };
+		32D7F72D20A7D9C30078A26E /* Common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32D7F72B20A7D9C30078A26E /* Common.cpp */; };
+		32D7F73020A7E54B0078A26E /* Plugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32D7F72E20A7E54B0078A26E /* Plugin.cpp */; };
 		32E3B3B4205CA7D60040AEF4 /* utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6DB1A3D1B9054A9007E6883 /* utilities.cpp */; };
+		32E3B3BC205CA8940040AEF4 /* FFGL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6DB1A2A1B9054A9007E6883 /* FFGL.cpp */; };
+		32E3B3BD205CA8940040AEF4 /* Add.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB4B63E11FF8453A0069DA80 /* Add.cpp */; };
+		32E3B3BE205CA8940040AEF4 /* FFGLPluginInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6DB1A311B9054A9007E6883 /* FFGLPluginInfo.cpp */; };
+		32E3B3BF205CA8940040AEF4 /* FFGLPluginInfoData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6DB1A331B9054A9007E6883 /* FFGLPluginInfoData.cpp */; };
+		32E3B3C0205CA8940040AEF4 /* FFGLPluginManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6DB1A341B9054A9007E6883 /* FFGLPluginManager.cpp */; };
+		32E3B3C1205CA8940040AEF4 /* FFGLPluginSDK.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6DB1A371B9054A9007E6883 /* FFGLPluginSDK.cpp */; };
+		32E3B3C2205CA8940040AEF4 /* FFGLShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6DB1A391B9054A9007E6883 /* FFGLShader.cpp */; };
+		32E3B3C3205CA8940040AEF4 /* FFGLFBO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6DB1A691B906185007E6883 /* FFGLFBO.cpp */; };
+		32E3B3CA205CA9000040AEF4 /* TimeMachine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32E3B3B7205CA8710040AEF4 /* TimeMachine.cpp */; };
+		32E3B3D0205CBA150040AEF4 /* TextureBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32E3B3CE205CBA150040AEF4 /* TextureBuffer.cpp */; };
+		32E3B3D1205CBA1B0040AEF4 /* FFGLFBO3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32E3B3CB205CB7D20040AEF4 /* FFGLFBO3D.cpp */; };
 		A9F92E9D201A1C1500527E48 /* FFGL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6DB1A2A1B9054A9007E6883 /* FFGL.cpp */; };
 		A9F92E9E201A1C1500527E48 /* FFGLPluginInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6DB1A311B9054A9007E6883 /* FFGLPluginInfo.cpp */; };
 		A9F92EA0201A1C1500527E48 /* FFGLPluginInfoData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6DB1A331B9054A9007E6883 /* FFGLPluginInfoData.cpp */; };
@@ -88,6 +112,25 @@
 		2FD1224818853D700009EBA8 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = System/Library/Frameworks/QTKit.framework; sourceTree = SDKROOT; };
 		2FD1225318853FFB0009EBA8 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		2FD1226B188540470009EBA8 /* AddSubtract.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AddSubtract.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		32D7F6FE20A6A03E0078A26E /* VoronoiGenerator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = VoronoiGenerator.cpp; sourceTree = "<group>"; };
+		32D7F6FF20A6A03E0078A26E /* VoronoiGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VoronoiGenerator.h; sourceTree = "<group>"; };
+		32D7F71020A6A1A10078A26E /* VoronoiGenerator.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoronoiGenerator.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		32D7F71120A6A1A10078A26E /* Gradients copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Gradients copy-Info.plist"; path = "/Users/tekt/creations/ffgl/build/osx/Gradients copy-Info.plist"; sourceTree = "<absolute>"; };
+		32D7F71220A6A3140078A26E /* VoronoiGenerator_Shader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = VoronoiGenerator_Shader.cpp; sourceTree = "<group>"; };
+		32D7F72820A7D9790078A26E /* Parameter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Parameter.cpp; sourceTree = "<group>"; };
+		32D7F72920A7D9790078A26E /* Parameter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Parameter.h; sourceTree = "<group>"; };
+		32D7F72B20A7D9C30078A26E /* Common.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Common.cpp; sourceTree = "<group>"; };
+		32D7F72C20A7D9C30078A26E /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		32D7F72E20A7E54B0078A26E /* Plugin.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Plugin.cpp; sourceTree = "<group>"; };
+		32D7F72F20A7E54B0078A26E /* Plugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Plugin.h; sourceTree = "<group>"; };
+		32E3B3B6205CA8610040AEF4 /* TimeMachine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeMachine.h; sourceTree = "<group>"; };
+		32E3B3B7205CA8710040AEF4 /* TimeMachine.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TimeMachine.cpp; sourceTree = "<group>"; };
+		32E3B3C8205CA8940040AEF4 /* TimeMachine.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeMachine.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		32E3B3C9205CA8940040AEF4 /* Add copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Add copy-Info.plist"; path = "/Users/tekt/creations/ffgl/build/osx/Add copy-Info.plist"; sourceTree = "<absolute>"; };
+		32E3B3CB205CB7D20040AEF4 /* FFGLFBO3D.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FFGLFBO3D.cpp; sourceTree = "<group>"; };
+		32E3B3CC205CB7D20040AEF4 /* FFGLFBO3D.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFGLFBO3D.h; sourceTree = "<group>"; };
+		32E3B3CE205CBA150040AEF4 /* TextureBuffer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TextureBuffer.cpp; sourceTree = "<group>"; };
+		32E3B3CF205CBA150040AEF4 /* TextureBuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextureBuffer.h; sourceTree = "<group>"; };
 		A9F28D5818B37D0C007D7C87 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A9F28D5A18B37D12007D7C87 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		A9F92E8C201A1B8900527E48 /* Plugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Plugin.h; path = ../../../source/plugins/Fireworks/Plugin.h; sourceTree = "<group>"; };
@@ -140,6 +183,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		32D7F70C20A6A1A10078A26E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32E3B3C4205CA8940040AEF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A9F92EA5201A1C1500527E48 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -170,12 +227,15 @@
 				D69416991B90420600D30319 /* xcconfig */,
 				D69416971B9041FA00D30319 /* FFGLPlugin-Info.plist */,
 				D69416961B9040DA00D30319 /* PluginIds.txt */,
+				32D7F72620A7D95C0078A26E /* shared */,
 				E8D767450C9195D90089BAEB /* source plugins */,
 				E8D165D30C5E174D0035D796 /* effect plugins */,
 				E8D165D40C5E177A0035D796 /* mixer plugins */,
 				E8D161130C5DF1DF0035D796 /* frameworks */,
 				2FD12214188538AC0009EBA8 /* source */,
 				2DA285A10AEE5E480030A4DD /* Products */,
+				32E3B3C9205CA8940040AEF4 /* Add copy-Info.plist */,
+				32D7F71120A6A1A10078A26E /* Gradients copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -186,6 +246,8 @@
 				DB4B63F41FF845820069DA80 /* Add.bundle */,
 				DB4B64161FF845920069DA80 /* Gradients.bundle */,
 				A9F92EA9201A1C1500527E48 /* Fireworks.bundle */,
+				32E3B3C8205CA8940040AEF4 /* TimeMachine.bundle */,
+				32D7F71020A6A1A10078A26E /* VoronoiGenerator.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -196,6 +258,45 @@
 				D6DB1A481B9054CD007E6883 /* lib */,
 			);
 			name = source;
+			sourceTree = "<group>";
+		};
+		32D7F6FD20A6A00C0078A26E /* Voronoi Generator */ = {
+			isa = PBXGroup;
+			children = (
+				32D7F6FE20A6A03E0078A26E /* VoronoiGenerator.cpp */,
+				32D7F6FF20A6A03E0078A26E /* VoronoiGenerator.h */,
+				32D7F71220A6A3140078A26E /* VoronoiGenerator_Shader.cpp */,
+			);
+			name = "Voronoi Generator";
+			path = "../../source/plugins/Voronoi Generator";
+			sourceTree = "<group>";
+		};
+		32D7F72620A7D95C0078A26E /* shared */ = {
+			isa = PBXGroup;
+			children = (
+				32D7F72820A7D9790078A26E /* Parameter.cpp */,
+				32D7F72920A7D9790078A26E /* Parameter.h */,
+				32D7F72B20A7D9C30078A26E /* Common.cpp */,
+				32D7F72C20A7D9C30078A26E /* Common.h */,
+				32D7F72E20A7E54B0078A26E /* Plugin.cpp */,
+				32D7F72F20A7E54B0078A26E /* Plugin.h */,
+			);
+			name = shared;
+			path = ../../source/shared;
+			sourceTree = "<group>";
+		};
+		32E3B3B5205CA8210040AEF4 /* TimeMachine */ = {
+			isa = PBXGroup;
+			children = (
+				32E3B3B6205CA8610040AEF4 /* TimeMachine.h */,
+				32E3B3B7205CA8710040AEF4 /* TimeMachine.cpp */,
+				32E3B3CB205CB7D20040AEF4 /* FFGLFBO3D.cpp */,
+				32E3B3CC205CB7D20040AEF4 /* FFGLFBO3D.h */,
+				32E3B3CE205CBA150040AEF4 /* TextureBuffer.cpp */,
+				32E3B3CF205CBA150040AEF4 /* TextureBuffer.h */,
+			);
+			name = TimeMachine;
+			path = ../../source/plugins/TimeMachine;
 			sourceTree = "<group>";
 		};
 		A91E037820173C1F0018E2D0 /* Gradients */ = {
@@ -336,6 +437,7 @@
 		E8D165D40C5E177A0035D796 /* mixer plugins */ = {
 			isa = PBXGroup;
 			children = (
+				32E3B3B5205CA8210040AEF4 /* TimeMachine */,
 				A94EF73518A9161E006D59F0 /* Add */,
 			);
 			name = "mixer plugins";
@@ -344,6 +446,7 @@
 		E8D767450C9195D90089BAEB /* source plugins */ = {
 			isa = PBXGroup;
 			children = (
+				32D7F6FD20A6A00C0078A26E /* Voronoi Generator */,
 				A9F92E8B201A1B6B00527E48 /* FireWorks */,
 				A91E037820173C1F0018E2D0 /* Gradients */,
 			);
@@ -368,6 +471,40 @@
 			name = AddSubtract;
 			productName = FFGLBrightness;
 			productReference = 2FD1226B188540470009EBA8 /* AddSubtract.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		32D7F70120A6A1A10078A26E /* VoronoiGenerator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32D7F70D20A6A1A10078A26E /* Build configuration list for PBXNativeTarget "VoronoiGenerator" */;
+			buildPhases = (
+				32D7F70220A6A1A10078A26E /* Resources */,
+				32D7F70320A6A1A10078A26E /* Sources */,
+				32D7F70C20A6A1A10078A26E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VoronoiGenerator;
+			productName = FFGLBrightness;
+			productReference = 32D7F71020A6A1A10078A26E /* VoronoiGenerator.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		32E3B3B9205CA8940040AEF4 /* TimeMachine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32E3B3C5205CA8940040AEF4 /* Build configuration list for PBXNativeTarget "TimeMachine" */;
+			buildPhases = (
+				32E3B3BA205CA8940040AEF4 /* Resources */,
+				32E3B3BB205CA8940040AEF4 /* Sources */,
+				32E3B3C4205CA8940040AEF4 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TimeMachine;
+			productName = FFGLBrightness;
+			productReference = 32E3B3C8205CA8940040AEF4 /* TimeMachine.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 		A9F92E9A201A1C1500527E48 /* Fireworks */ = {
@@ -449,12 +586,28 @@
 				2FD12258188540470009EBA8 /* AddSubtract */,
 				DB4B63E51FF845820069DA80 /* Add */,
 				A9F92E9A201A1C1500527E48 /* Fireworks */,
+				32E3B3B9205CA8940040AEF4 /* TimeMachine */,
+				32D7F70120A6A1A10078A26E /* VoronoiGenerator */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		2FD1225B188540470009EBA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32D7F70220A6A1A10078A26E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32E3B3BA205CA8940040AEF4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -497,6 +650,44 @@
 				D6DB1A5C1B9054FE007E6883 /* FFGLShader.cpp in Sources */,
 				D69416C91B904EA200D30319 /* AddSubtract.cpp in Sources */,
 				D6DB1A6B1B906185007E6883 /* FFGLFBO.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32D7F70320A6A1A10078A26E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32D7F71E20A6AF1B0078A26E /* utilities.cpp in Sources */,
+				32D7F71920A6AF1B0078A26E /* FFGLPluginInfo.cpp in Sources */,
+				32D7F71820A6AF1B0078A26E /* FFGL.cpp in Sources */,
+				32D7F71C20A6AF1B0078A26E /* FFGLPluginSDK.cpp in Sources */,
+				32D7F70420A6A1A10078A26E /* VoronoiGenerator.cpp in Sources */,
+				32D7F71A20A6AF1B0078A26E /* FFGLPluginInfoData.cpp in Sources */,
+				32D7F71420A6A35A0078A26E /* VoronoiGenerator_Shader.cpp in Sources */,
+				32D7F71B20A6AF1B0078A26E /* FFGLPluginManager.cpp in Sources */,
+				32D7F72D20A7D9C30078A26E /* Common.cpp in Sources */,
+				32D7F71720A6AF1B0078A26E /* FFGLFBO.cpp in Sources */,
+				32D7F73020A7E54B0078A26E /* Plugin.cpp in Sources */,
+				32D7F71D20A6AF1B0078A26E /* FFGLShader.cpp in Sources */,
+				32D7F72A20A7D9790078A26E /* Parameter.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32E3B3BB205CA8940040AEF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32E3B3BC205CA8940040AEF4 /* FFGL.cpp in Sources */,
+				32E3B3BD205CA8940040AEF4 /* Add.cpp in Sources */,
+				32E3B3BE205CA8940040AEF4 /* FFGLPluginInfo.cpp in Sources */,
+				32E3B3CA205CA9000040AEF4 /* TimeMachine.cpp in Sources */,
+				32E3B3BF205CA8940040AEF4 /* FFGLPluginInfoData.cpp in Sources */,
+				32E3B3C0205CA8940040AEF4 /* FFGLPluginManager.cpp in Sources */,
+				32E3B3D1205CBA1B0040AEF4 /* FFGLFBO3D.cpp in Sources */,
+				32E3B3C1205CA8940040AEF4 /* FFGLPluginSDK.cpp in Sources */,
+				32E3B3C2205CA8940040AEF4 /* FFGLShader.cpp in Sources */,
+				32E3B3C3205CA8940040AEF4 /* FFGLFBO.cpp in Sources */,
+				32E3B3D0205CBA150040AEF4 /* TextureBuffer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -624,6 +815,104 @@
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				PREBINDING = NO;
 				PRODUCT_NAME = AddSubtract;
+				WRAPPER_EXTENSION = bundle;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		32D7F70E20A6A1A10078A26E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"_DEBUG=1",
+					"$(PREPROCESSOR_BASE)",
+					LOGSHADERERRORS,
+				);
+				INFOPLIST_FILE = "Gradients copy-Info.plist";
+				INSTALL_PATH = "$(HOME)/creations/resolume/plugins";
+				PREBINDING = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = bundle;
+				ZERO_LINK = NO;
+			};
+			name = Debug;
+		};
+		32D7F70F20A6A1A10078A26E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"NDEBUG=1",
+					"_NDEBUG=1",
+					"$(PREPROCESSOR_BASE)",
+					LOGSHADERERRORS,
+				);
+				INFOPLIST_FILE = "Gradients copy-Info.plist";
+				INSTALL_PATH = "$(HOME)/creations/resolume/plugins";
+				PREBINDING = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = bundle;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		32E3B3C6205CA8940040AEF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = "Add copy-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				PREBINDING = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.optexture.TimeMachine;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = bundle;
+				ZERO_LINK = NO;
+			};
+			name = Debug;
+		};
+		32E3B3C7205CA8940040AEF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = "Add copy-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				PREBINDING = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.optexture.TimeMachine;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = bundle;
 				ZERO_LINK = NO;
 			};
@@ -780,6 +1069,24 @@
 			buildConfigurations = (
 				2FD12269188540470009EBA8 /* Debug */,
 				2FD1226A188540470009EBA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		32D7F70D20A6A1A10078A26E /* Build configuration list for PBXNativeTarget "VoronoiGenerator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32D7F70E20A6A1A10078A26E /* Debug */,
+				32D7F70F20A6A1A10078A26E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		32E3B3C5205CA8940040AEF4 /* Build configuration list for PBXNativeTarget "TimeMachine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32E3B3C6205CA8940040AEF4 /* Debug */,
+				32E3B3C7205CA8940040AEF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
