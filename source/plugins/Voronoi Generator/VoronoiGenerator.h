@@ -58,6 +58,7 @@ private:
   FloatParameter _rotate;
   BoolParameter _fillEnabled;
   BoolParameter _borderEnabled;
+  BoolParameter _isolinesEnabled;
   FloatParameter _borderOffsetX;
   FloatParameter _borderOffsetY;
   FloatParameter _borderColorR;

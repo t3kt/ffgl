@@ -9,25 +9,8 @@
 #include <FFGLLib.h>
 #include <iostream>
 #include <iomanip>
+#include <cmath>
 #include "../../lib/ffgl/utilities/utilities.h"
-
-enum VoroGenParam {
-  VGPARAM_SCALE_X,
-  VGPARAM_SCALE_Y,
-  VGPARAM_UNIFORM_SCALE,
-  VGPARAM_TRANSLATE_X,
-  VGPARAM_TRANSLATE_Y,
-  VGPARAM_ROTATE,
-  VGPARAM_SPEED,
-  VGPARAM_FILL_ENABLED,
-  VGPARAM_BORDER_ENABLED,
-  VGPARAM_BORDER_OFFSET_X,
-  VGPARAM_BORDER_OFFSET_Y,
-  VGPARAM_BORDER_COLOR_R,
-  VGPARAM_BORDER_COLOR_G,
-  VGPARAM_BORDER_COLOR_B,
-  VGPARAM_DUMP,
-};
 
 static CFFGLPluginInfo PluginInfo
 (
@@ -50,8 +33,9 @@ VoronoiGenerator::VoronoiGenerator()
 , _uniformScale(1, 0, 5)
 , _translateX(0, -10, 10)
 , _translateY(0, -10, 10)
-, _rotate(0, -180, 180)
+, _rotate(0, -M_PI, M_PI)
 , _fillEnabled(true, "enabled", "disabled")
+, _isolinesEnabled(false, "enabled", "disabled")
 , _borderEnabled(true, "enabled", "disabled")
 , _borderOffsetX(0.01, 0, 0.1f)
 , _borderOffsetY(0.03, 0, 0.1f)
@@ -74,6 +58,7 @@ VoronoiGenerator::VoronoiGenerator()
   RegisterParam(_translateY, FF_TYPE_YPOS, "Translate Y");
   RegisterParam(_rotate, FF_TYPE_STANDARD, "Rotate");
   RegisterParam(_fillEnabled, "Fill Enabled");
+  RegisterParam(_isolinesEnabled, "Isolines Enabled");
   RegisterParam(_borderEnabled, "Border Enabled");
   RegisterParam(_borderOffsetX, FF_TYPE_XPOS, "Border Offset X");
   RegisterParam(_borderOffsetY, FF_TYPE_YPOS, "Border Offset Y");
@@ -104,6 +89,7 @@ FFResult VoronoiGenerator::InitGL(const FFGLViewportStruct *vp) {
   m_rotateLocation = m_shader.FindUniform("rotation");
   m_enableLocation = m_shader.FindUniform("enabled");
   m_borderColorLocation = m_shader.FindUniform("borderColor");
+  m_borderOffsetLocation = m_shader.FindUniform("borderOffset");
   m_resolutionLocation = m_shader.FindUniform("resolution");
   m_timeLocation = m_shader.FindUniform("iGlobalTime");
 
@@ -133,11 +119,6 @@ void VoronoiGenerator::updateTime() {
 }
 
 FFResult VoronoiGenerator::ProcessOpenGL(ProcessOpenGLStruct *pGL) {
-//  auto t = m_time;
-//  double ticks = getTicks() / 1000.0;
-//  double lastFrameTime = ticks = m_lastTicks;
-//  m_time += lastFrameTime;
-//  std::cout << "time was " << t << " ticks: " << ticks << " lastticks: " << m_lastTicks << " delta: " << lastFrameTime << " new time: " << m_time << std::endl;
   updateTime();
 
   m_shader.BindShader();
@@ -150,9 +131,13 @@ FFResult VoronoiGenerator::ProcessOpenGL(ProcessOpenGLStruct *pGL) {
               _translateY.GetValue());
   glUniform1f(m_rotateLocation,
               _rotate.GetValue());
-  glUniform2f(m_enableLocation,
+  glUniform3f(m_enableLocation,
               _borderEnabled.GetValue() ? 1.0f : 0.0f,
-              _fillEnabled.GetValue() ? 1.0f : 0.0f);
+              _fillEnabled.GetValue() ? 1.0f : 0.0f,
+              _isolinesEnabled.GetValue() ? 1.0f : 0.0f);
+  glUniform2f(m_borderOffsetLocation,
+              _borderOffsetX.GetValue(),
+              _borderOffsetY.GetValue());
   glUniform3f(m_borderColorLocation,
               _borderColorR.GetValue(),
               _borderColorG.GetValue(),

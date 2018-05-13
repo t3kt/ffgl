@@ -35,9 +35,6 @@ void main() {
 std::string voronoiGenFragmentShader = STRINGIFY(
 
 
-#define BORDER 0
-#define FILL 1
-
 #define ANIMATE
 
  uniform float iGlobalTime;
@@ -45,7 +42,7 @@ std::string voronoiGenFragmentShader = STRINGIFY(
  uniform float rotation;
  uniform vec2 translate;
  uniform vec2 borderOffset;
- uniform vec2 enabled;
+ uniform vec3 enabled;
  uniform vec3 borderColor;
  uniform vec2 resolution;
 
@@ -128,16 +125,18 @@ std::string voronoiGenFragmentShader = STRINGIFY(
 
   vec3 col = vec3(0, 0, 0);
   // isolines
-  //col = c.x*(0.5 + 0.5*sin(64.0*c.x))*vec3(1.0);
+  if (enabled[2] > 0.5) {
+  col = c.x*(0.5 + 0.5*sin(64.0*c.x))*vec3(1.0);
+  }
   // borders
-//  if (enabled[0] > 0.5) {
+  if (enabled[0] > 0.5) {
     col = mix( borderColor, col, smoothstep( borderOffset[0], borderOffset[1], c.x ) );
-//  }
+  }
 
   //    col = texture(sTD2DInputs[0], c.xy).rgb;
-//  if (enabled[1] > 0.5) {
+  if (enabled[1] > 0.5) {
     col.rg += c.xy;
-//  }
+  }
 
   // feature points
   //float dd = length( c.yz );
