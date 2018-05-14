@@ -10,7 +10,7 @@
 #include <FFGLPluginSDK.h>
 #include <FFGLShader.h>
 #include <string>
-#include "Plugin.h"
+#include "../../shared/Plugin.h"
 #include <memory>
 
 extern std::string voronoiGenVertexShader;

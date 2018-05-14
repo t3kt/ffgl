@@ -5,6 +5,8 @@
 //  Created by tekt on 5/11/18.
 //
 
+#define _USE_MATH_DEFINES
+
 #include "VoronoiGenerator.h"
 #include <FFGLLib.h>
 #include <iostream>
@@ -70,6 +72,7 @@ VoronoiGenerator::VoronoiGenerator()
 }
 
 FFResult VoronoiGenerator::InitGL(const FFGLViewportStruct *vp) {
+  std::cout << "VoronoiGenerator:InitGL BEGIN" << std::endl;
   if (m_shader.Compile(voronoiGenVertexShader.c_str(),
                        voronoiGenFragmentShader.c_str()) != GL_TRUE) {
     std::cerr << "VoronoiGenerator: failed to compile shader" << std::endl;
@@ -94,6 +97,7 @@ FFResult VoronoiGenerator::InitGL(const FFGLViewportStruct *vp) {
   m_timeLocation = m_shader.FindUniform("iGlobalTime");
 
   m_shader.UnbindShader();
+  std::cout << "VoronoiGenerator:InitGL END" << std::endl;
 
   return FF_SUCCESS;
 }
@@ -106,6 +110,7 @@ FFResult VoronoiGenerator::Resize(const FFGLViewportStruct *vp) {
 }
 
 FFResult VoronoiGenerator::DeInitGL() {
+  std::cout << "VoronoiGenerator:DeInitGL" << std::endl;
   m_shader.FreeGLResources();
 
   return FF_SUCCESS;
@@ -119,6 +124,7 @@ void VoronoiGenerator::updateTime() {
 }
 
 FFResult VoronoiGenerator::ProcessOpenGL(ProcessOpenGLStruct *pGL) {
+  //std::cout << "VoronoiGenerator:ProcessOpenGL BEGIN" << std::endl;
   updateTime();
 
   m_shader.BindShader();
@@ -165,11 +171,13 @@ FFResult VoronoiGenerator::ProcessOpenGL(ProcessOpenGLStruct *pGL) {
   glEnd();
 
   m_shader.UnbindShader();
+  //std::cout << "VoronoiGenerator:ProcessOpenGL END" << std::endl;
 
   return FF_SUCCESS;
 }
 
 void VoronoiGenerator::debugDump() const {
+  std::cout << "VoronoiGenerator:DebugDump" << std::endl;
   std::cout << "\n"
   << "VoronoiGenerator DUMP\n"
   << std::setprecision(4)

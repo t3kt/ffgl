@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2005
+VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mixers", "mixers", "{98BAD375-4E77-4EDA-86CA-E77F213DCDA6}"
 EndProject
@@ -15,6 +15,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Add", "Add.vcxproj", "{24912FC3-BC01-49E9-BA34-54549F0D8F23}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Gradient", "Gradient.vcxproj", "{6858F0CB-DE74-406F-B56A-CC5514CAA952}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VoronoiGenerator", "VoronoiGenerator.vcxproj", "{B21A3B40-CD2C-4DE6-BD09-1D70BC57280A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,6 +58,14 @@ Global
 		{6858F0CB-DE74-406F-B56A-CC5514CAA952}.Release|Win32.Build.0 = Release|Win32
 		{6858F0CB-DE74-406F-B56A-CC5514CAA952}.Release|x64.ActiveCfg = Release|x64
 		{6858F0CB-DE74-406F-B56A-CC5514CAA952}.Release|x64.Build.0 = Release|x64
+		{B21A3B40-CD2C-4DE6-BD09-1D70BC57280A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B21A3B40-CD2C-4DE6-BD09-1D70BC57280A}.Debug|Win32.Build.0 = Debug|Win32
+		{B21A3B40-CD2C-4DE6-BD09-1D70BC57280A}.Debug|x64.ActiveCfg = Debug|x64
+		{B21A3B40-CD2C-4DE6-BD09-1D70BC57280A}.Debug|x64.Build.0 = Debug|x64
+		{B21A3B40-CD2C-4DE6-BD09-1D70BC57280A}.Release|Win32.ActiveCfg = Release|Win32
+		{B21A3B40-CD2C-4DE6-BD09-1D70BC57280A}.Release|Win32.Build.0 = Release|Win32
+		{B21A3B40-CD2C-4DE6-BD09-1D70BC57280A}.Release|x64.ActiveCfg = Release|x64
+		{B21A3B40-CD2C-4DE6-BD09-1D70BC57280A}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,6 +75,7 @@ Global
 		{DA41DB28-FD03-4D06-9188-FF2BE1337CAF} = {26AC2413-23B7-4D1F-BB58-17D67106F3F1}
 		{24912FC3-BC01-49E9-BA34-54549F0D8F23} = {98BAD375-4E77-4EDA-86CA-E77F213DCDA6}
 		{6858F0CB-DE74-406F-B56A-CC5514CAA952} = {26AC2413-23B7-4D1F-BB58-17D67106F3F1}
+		{B21A3B40-CD2C-4DE6-BD09-1D70BC57280A} = {26AC2413-23B7-4D1F-BB58-17D67106F3F1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {28436461-C06F-497A-8594-636977E4CDAF}
